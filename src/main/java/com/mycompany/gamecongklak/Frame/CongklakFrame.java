@@ -27,6 +27,8 @@ public class CongklakFrame extends javax.swing.JFrame {
     public CongklakFrame(PlayerOne player1, PlayerTwo player2) {
         initComponents();
         congklak = new Congklak(player1, player2, player1.getName());
+        jLabelNamePlayer1.setText(player1.getName());
+        jLabelNamePlayer2.setText(player2.getName());
         updateButton();
         updateEnabledButton();
     }
@@ -341,6 +343,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -356,6 +359,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -371,6 +375,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -386,6 +391,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -401,6 +407,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -416,6 +423,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -431,6 +439,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -446,6 +455,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -461,6 +471,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -476,6 +487,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -491,6 +503,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -506,6 +519,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -521,6 +535,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();
@@ -536,6 +551,7 @@ public class CongklakFrame extends javax.swing.JFrame {
         updateButton();
         updateEnabledButton();
         congklak.checkEmpty();
+        System.out.println(congklak.checkEnd());
         if (congklak.checkEnd()){
             GameResult gr = congklak.GenerateResult();
             disableAllButton();

@@ -126,9 +126,10 @@ public class Naming extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "You must insert player 1 and/or player 2 name's", "DENIED", HEIGHT);
         }else{
             ///jTextFieldPlayer1.getText(),[7,7,7,7,7,7,7],7,true
-            int[] holes = {7,7,7,7,7,7,7};
-            PlayerOne player1 = new PlayerOne(jTextFieldPlayer1.getText(),holes,7,true);
-            PlayerTwo player2 = new PlayerTwo(jTextFieldPlayer2.getText(),holes,7,false);
+            int[] holes1 = {0,0,0,0,0,0,1};
+            int[] holes2 = {0,0,0,0,0,0,1};
+            PlayerOne player1 = new PlayerOne(jTextFieldPlayer1.getText(),holes1,0,true);
+            PlayerTwo player2 = new PlayerTwo(jTextFieldPlayer2.getText(),holes2,0,false);
             CongklakFrame c = new CongklakFrame(player1,player2);
             c.setVisible(true);
             this.dispose();

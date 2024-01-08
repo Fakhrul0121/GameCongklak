@@ -4,17 +4,38 @@
  */
 package com.mycompany.gamecongklak.Frame;
 
+import com.mycompany.gamecongklak.Class.Database;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author user
  */
 public class History extends javax.swing.JFrame {
-
+    
+    DefaultTableModel result_table;
     /**
      * Creates new form History
      */
     public History() {
         initComponents();
+        String [] result_title = {"Player 1", "Player 2", "Player 1 Score","Player 2 Score","Winner"};
+        result_table = new DefaultTableModel(result_title,0);
+        try{
+            Database db = new Database();
+            String sql = "select * from gameresult";
+            ResultSet rs = db.getData(sql);
+            while(rs.next()){
+                String data[] = {rs.getString("Player1"), rs.getString("Player2"), rs.getString("Player1Score"), rs.getString("Player2Score"),rs.getString("Winner")};
+                result_table.addRow(data);
+            }
+        }
+        catch(SQLException ex){
+            System.out.println(ex.toString());
+        }
+        jTableResultHistory.setModel(result_table);
     }
 
     /**
@@ -40,17 +61,17 @@ public class History extends javax.swing.JFrame {
 
         jTableResultHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Time Started", "Time Finished", "Winner's Name", "Loser's Name", "Winner's Score ", "Loser's Score"
+                "Player 1 Name", "Player 2 Name", "Player 1 Score ", "Player 2 Score", "Winner"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

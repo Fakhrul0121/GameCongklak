@@ -40,18 +40,15 @@ public class Congklak {
         player.setHole(pickedHoles, 0);
         int i = pickedHoles + 1;
         while (true){
-            System.out.println(i);
             if (i == 15){
                 i = 0;
             }
             if (i < 7){
                 player.addBean(i);
-                System.out.println(player.getHole(i)+" "+opponent.getHole(i));
             }else if (i == 7){
                 player.addHouse(1);
             }else{
                 opponent.addBean(i - 8);
-                System.out.println(player.getHole(i-8)+" "+opponent.getHole(i-8));
             }
             beans--;
             if (beans == 0){
@@ -117,16 +114,16 @@ public class Congklak {
     }
     
     public boolean checkEnd(){
-        return (player1.getHouse() >= (7*7) || player2.getHouse() >= (7*7));
+        return (player1.getHouse() >= 1 || player2.getHouse() >= 1);
     }
     
     public GameResult GenerateResult(){
         if (player1.getHouse() > player2.getHouse()){
-            return new GameResult(startTime,LocalDateTime.now(),player1.getName(),player2.getName(),player1.getHouse(),player2.getHouse());
+            return new GameResult(startTime,LocalDateTime.now(),player1.getName(),player2.getName(),player1.getHouse(),player2.getHouse(),player1.getName());
         }else if (player2.getHouse() < player2.getHouse()){
-            return new GameResult(startTime,LocalDateTime.now(),player2.getName(),player1.getName(),player2.getHouse(),player1.getHouse());
+            return new GameResult(startTime,LocalDateTime.now(),player1.getName(),player2.getName(),player1.getHouse(),player2.getHouse(),player2.getName());
         }else
-            return null;
+            return new GameResult(startTime,LocalDateTime.now(),player1.getName(),player2.getName(),player1.getHouse(),player2.getHouse(),"It's a draw");
     }
     
     public String getPlayer_turn() {

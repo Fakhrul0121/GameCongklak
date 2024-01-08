@@ -5,6 +5,9 @@
 package com.mycompany.gamecongklak.Frame;
 
 import com.mycompany.gamecongklak.Class.GameResult;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,7 +23,7 @@ public class Result extends javax.swing.JFrame {
     public Result(GameResult gameResult) {
         initComponents();
         this.gameResult = gameResult;
-        jLabel1.setText(gameResult.getWinnerName());
+        jLabel1.setText(gameResult.getWinner());
     }
 
     /**
@@ -84,6 +87,11 @@ public class Result extends javax.swing.JFrame {
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
         MainMenu mm = new MainMenu();
+        try {
+            gameResult.uploadToDatabase();
+        } catch (SQLException ex) {
+            Logger.getLogger(Result.class.getName()).log(Level.SEVERE, null, ex);
+        }
         mm.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
